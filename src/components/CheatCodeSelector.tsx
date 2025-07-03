@@ -12,27 +12,36 @@ const CheatCodeSelector = ({ language, onSelectCheatCode }: CheatCodeSelectorPro
   const cheatCodes = language === 'html' ? htmlCheatCodes : cCheatCodes;
   
   return (
-    <div className="px-4 mb-4">
-      <Select onValueChange={(value) => {
-        const selectedCode = cheatCodes.find(code => code.id === value);
-        if (selectedCode) {
-          onSelectCheatCode(selectedCode);
-        }
-      }}>
-        <SelectTrigger className="w-full bg-white border-2 border-gray-200 hover:border-gray-300 transition-colors">
-          <SelectValue placeholder={`${language === 'html' ? 'HTML' : 'C'} কোড টেমপ্লেট নির্বাচন করুন`} />
-        </SelectTrigger>
-        <SelectContent className="max-h-60 bg-white">
-          {cheatCodes.map((code) => (
-            <SelectItem key={code.id} value={code.id} className="hover:bg-gray-100">
-              <div className="flex flex-col items-start">
-                <span className="font-medium">{code.titleBangla}</span>
-                <span className="text-xs text-gray-500">{code.title}</span>
-              </div>
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+    <div className="px-4 mb-6">
+      <div className="glass-effect rounded-2xl p-1 border border-white/10">
+        <Select onValueChange={(value) => {
+          const selectedCode = cheatCodes.find(code => code.id === value);
+          if (selectedCode) {
+            onSelectCheatCode(selectedCode);
+          }
+        }}>
+          <SelectTrigger className="w-full bg-transparent border-none text-white hover:bg-white/5 transition-colors mobile-touch rounded-xl h-14">
+            <SelectValue 
+              placeholder={`${language === 'html' ? '🌐 HTML' : '💻 C'} কোড টেমপ্লেট নির্বাচন করুন`}
+              className="text-gray-300"
+            />
+          </SelectTrigger>
+          <SelectContent className="max-h-60 glass-effect border-white/20 text-white">
+            {cheatCodes.map((code) => (
+              <SelectItem 
+                key={code.id} 
+                value={code.id} 
+                className="hover:bg-white/10 mobile-touch rounded-xl my-1 cursor-pointer"
+              >
+                <div className="flex flex-col items-start gap-1">
+                  <span className="font-semibold text-white">{code.titleBangla}</span>
+                  <span className="text-xs text-gray-400">{code.title}</span>
+                </div>
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
     </div>
   );
 };

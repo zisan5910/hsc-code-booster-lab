@@ -1,5 +1,5 @@
 
-import { Menu, Trash2 } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
@@ -23,7 +23,14 @@ const Header = ({ onClear }: HeaderProps) => {
           </SheetTrigger>
           <SheetContent side="left" className="w-80 bg-gradient-to-b from-purple-50 to-white">
             <SheetHeader>
-              <SheetTitle className="text-purple-800 text-xl font-bold">HSC Code Lab</SheetTitle>
+              <div className="flex items-center gap-3">
+                <img 
+                  src="https://i.postimg.cc/jdXvXFLG/HSC-20250703-175009-0000.png" 
+                  alt="Theta Code Logo" 
+                  className="w-8 h-8 object-contain"
+                />
+                <SheetTitle className="text-purple-800 text-xl font-bold">Theta Code</SheetTitle>
+              </div>
             </SheetHeader>
             <div className="mt-6 space-y-4">
               <div className="rounded-lg bg-gradient-to-r from-purple-100 to-teal-100 p-4">
@@ -75,10 +82,17 @@ const Header = ({ onClear }: HeaderProps) => {
           </SheetContent>
         </Sheet>
 
-        {/* App Name */}
-        <h1 className="text-lg font-bold bg-gradient-to-r from-white to-purple-100 bg-clip-text text-transparent">
-          HSC Code Lab
-        </h1>
+        {/* App Name with Logo */}
+        <div className="flex items-center gap-2">
+          <img 
+            src="https://i.postimg.cc/jdXvXFLG/HSC-20250703-175009-0000.png" 
+            alt="Theta Code Logo" 
+            className="w-6 h-6 object-contain"
+          />
+          <h1 className="text-lg font-bold bg-gradient-to-r from-white to-purple-100 bg-clip-text text-transparent">
+            Theta Code
+          </h1>
+        </div>
 
         {/* Empty space for balance */}
         <div className="w-10"></div>

@@ -1,7 +1,7 @@
 
 {
-  "name": "HSC Code Lab",
-  "short_name": "HSC Code Lab",
+  "name": "Theta Code",
+  "short_name": "Theta Code",
   "description": "Mobile-first coding lab for HSC students",
   "start_url": "/",
   "display": "standalone",
@@ -11,9 +11,10 @@
   "scope": "/",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "any",
-      "type": "image/x-icon"
+      "src": "https://i.postimg.cc/jdXvXFLG/HSC-20250703-175009-0000.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "categories": ["education", "productivity"],

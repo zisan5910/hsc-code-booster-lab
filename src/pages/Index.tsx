@@ -9,8 +9,28 @@ import { Language, CheatCode } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const Index = () => {
+  // Default templates for each language
+  const defaultTemplates = {
+    html: `<html>
+<head>
+<title> পছন্দমত টাইটেল </title>
+</head>
+<body>
+ এখানে যা লেখা হবে তাই আউটপুট।
+</body>
+</html>`,
+    c: `#include <stdio.h>
+
+int main() {
+    // আপনার কোড এখানে লিখুন
+    printf("Hello World!\\n");
+    
+    return 0;
+}`
+  };
+
   const [language, setLanguage] = useLocalStorage<Language>('hsc-code-lab-language', 'html');
-  const [code, setCode] = useLocalStorage('hsc-code-lab-code', '');
+  const [code, setCode] = useLocalStorage('hsc-code-lab-code', defaultTemplates.html);
   const [currentCheatCode, setCurrentCheatCode] = useState<CheatCode | null>(null);
 
   // Service Worker Registration for PWA
@@ -24,7 +44,8 @@ const Index = () => {
 
   const handleLanguageChange = (newLanguage: Language) => {
     setLanguage(newLanguage);
-    setCode(''); // Clear code when switching languages
+    // Set default template for the selected language
+    setCode(defaultTemplates[newLanguage]);
     setCurrentCheatCode(null);
   };
 
@@ -34,7 +55,8 @@ const Index = () => {
   };
 
   const handleClear = () => {
-    setCode('');
+    // Reset to default template instead of empty string
+    setCode(defaultTemplates[language]);
     setCurrentCheatCode(null);
   };
 

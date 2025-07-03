@@ -12,30 +12,30 @@ const Header = ({ onClear }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-r from-purple-600 to-purple-800 text-white shadow-lg">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-slate-200/50 shadow-sm">
       <div className="flex items-center justify-between px-4 py-3">
         {/* Hamburger Menu */}
         <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/20">
+            <Button variant="ghost" size="icon" className="text-slate-700 hover:bg-slate-100 rounded-xl">
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-80 bg-gradient-to-b from-purple-50 to-white">
+          <SheetContent side="left" className="w-80 bg-white/95 backdrop-blur-lg border-r border-slate-200/50">
             <SheetHeader>
               <div className="flex flex-col items-center gap-4 py-6">
                 <img 
                   src="https://i.postimg.cc/NMq1Y6K6/Picsart-25-07-03-17-55-04-190.png" 
                   alt="Theta Code Logo" 
-                  className="w-20 h-20 object-contain"
+                  className="w-20 h-20 object-contain rounded-2xl shadow-lg"
                 />
-                <SheetTitle className="text-purple-800 text-2xl font-bold">Theta Code</SheetTitle>
+                <SheetTitle className="text-slate-800 text-2xl font-bold">Theta Code</SheetTitle>
                 
                 {/* Developer Portfolio Link */}
                 <Button
                   variant="outline"
                   size="sm"
-                  className="flex items-center gap-2 border-purple-300 text-purple-700 hover:bg-purple-100"
+                  className="flex items-center gap-2 border-slate-300 text-slate-700 hover:bg-slate-100 rounded-xl px-4 py-2"
                   onClick={() => window.open('https://ridoan-zisan.netlify.app', '_blank')}
                 >
                   <Code className="h-4 w-4" />
@@ -46,11 +46,11 @@ const Header = ({ onClear }: HeaderProps) => {
             
             <div className="px-4 space-y-6">
               {/* HTML Section */}
-              <div className="rounded-lg bg-gradient-to-r from-orange-100 to-red-100 p-4">
+              <div className="rounded-2xl bg-gradient-to-br from-orange-50 to-red-50 p-4 border border-orange-200/50">
                 <h4 className="font-semibold text-orange-800 mb-3 flex items-center gap-2">
                   🌐 HTML শেখার সুবিধা
                 </h4>
-                <ul className="text-sm text-gray-700 space-y-2">
+                <ul className="text-sm text-slate-700 space-y-2">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-orange-500 rounded-full mr-3 mt-1.5"></span>
                     রিয়েল-টাইম প্রিভিউ দেখুন
@@ -71,11 +71,11 @@ const Header = ({ onClear }: HeaderProps) => {
               </div>
 
               {/* C Programming Section */}
-              <div className="rounded-lg bg-gradient-to-r from-blue-100 to-cyan-100 p-4">
+              <div className="rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 p-4 border border-blue-200/50">
                 <h4 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
                   💻 C প্রোগ্রামিং সুবিধা
                 </h4>
-                <ul className="text-sm text-gray-700 space-y-2">
+                <ul className="text-sm text-slate-700 space-y-2">
                   <li className="flex items-start">
                     <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-1.5"></span>
                     সিমুলেটেড আউটপুট দেখুন
@@ -96,7 +96,7 @@ const Header = ({ onClear }: HeaderProps) => {
               </div>
 
               {/* App Info */}
-              <div className="rounded-lg bg-gradient-to-r from-purple-100 to-violet-100 p-4 text-center">
+              <div className="rounded-2xl bg-gradient-to-br from-purple-50 to-violet-50 p-4 text-center border border-purple-200/50">
                 <p className="text-sm text-purple-700 font-medium">
                   📱 মোবাইল ফ্রেন্ডলি • 🔄 অফলাইন সাপোর্ট • 🎯 HSC ফোকাসড
                 </p>
@@ -110,9 +110,9 @@ const Header = ({ onClear }: HeaderProps) => {
           <img 
             src="https://i.postimg.cc/NMq1Y6K6/Picsart-25-07-03-17-55-04-190.png" 
             alt="Theta Code Logo" 
-            className="w-6 h-6 object-contain"
+            className="w-8 h-8 object-contain rounded-lg"
           />
-          <h1 className="text-lg font-bold bg-gradient-to-r from-white to-purple-100 bg-clip-text text-transparent">
+          <h1 className="text-lg font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent">
             Theta Code
           </h1>
         </div>

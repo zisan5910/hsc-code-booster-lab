@@ -43,30 +43,35 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 backdrop-blur-sm">
+      {/* Mobile-first design with app-like experience */}
+      <div className="fixed inset-0 bg-white/60 backdrop-blur-md -z-10"></div>
+      
       <Header onClear={handleClear} />
       
-      <div className="max-w-4xl mx-auto">
-        <LanguageToggle language={language} onLanguageChange={handleLanguageChange} />
-        
-        <CheatCodeSelector 
-          language={language} 
-          onSelectCheatCode={handleSelectCheatCode} 
-        />
-        
-        <CodeEditor 
-          language={language} 
-          code={code} 
-          onChange={handleCodeChange}
-          onClear={handleClear}
-        />
-        
-        <Preview 
-          language={language} 
-          code={code} 
-          algorithm={currentCheatCode?.algorithm}
-          flowchart={currentCheatCode?.flowchart}
-        />
+      <div className="max-w-md mx-auto px-2 sm:max-w-2xl lg:max-w-4xl">
+        <div className="space-y-3 pb-20">
+          <LanguageToggle language={language} onLanguageChange={handleLanguageChange} />
+          
+          <CheatCodeSelector 
+            language={language} 
+            onSelectCheatCode={handleSelectCheatCode} 
+          />
+          
+          <CodeEditor 
+            language={language} 
+            code={code} 
+            onChange={handleCodeChange}
+            onClear={handleClear}
+          />
+          
+          <Preview 
+            language={language} 
+            code={code} 
+            algorithm={currentCheatCode?.algorithm}
+            flowchart={currentCheatCode?.flowchart}
+          />
+        </div>
       </div>
     </div>
   );

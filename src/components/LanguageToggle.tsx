@@ -9,28 +9,28 @@ interface LanguageToggleProps {
 
 const LanguageToggle = ({ language, onLanguageChange }: LanguageToggleProps) => {
   return (
-    <div className="flex glass-effect rounded-2xl p-2 mx-4 my-6 border border-white/10">
+    <div className="flex bg-gray-100 rounded-lg p-1 mx-4 my-3">
       <Button
         variant={language === 'html' ? 'default' : 'ghost'}
-        className={`flex-1 rounded-xl transition-all duration-300 mobile-touch font-semibold ${
+        className={`flex-1 rounded-md transition-all ${
           language === 'html'
-            ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-lg border-orange-400/50'
-            : 'text-gray-300 hover:bg-white/10 hover:text-white'
+            ? 'bg-gradient-to-r from-orange-500 to-red-500 text-white shadow-md'
+            : 'text-gray-600 hover:bg-white'
         }`}
         onClick={() => onLanguageChange('html')}
       >
-        🌐 HTML
+        HTML
       </Button>
       <Button
         variant={language === 'c' ? 'default' : 'ghost'}
-        className={`flex-1 rounded-xl transition-all duration-300 mobile-touch font-semibold ${
+        className={`flex-1 rounded-md transition-all ${
           language === 'c'
-            ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg border-blue-400/50'
-            : 'text-gray-300 hover:bg-white/10 hover:text-white'
+            ? 'bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-md'
+            : 'text-gray-600 hover:bg-white'
         }`}
         onClick={() => onLanguageChange('c')}
       >
-        💻 C Programming
+        C Programming
       </Button>
     </div>
   );

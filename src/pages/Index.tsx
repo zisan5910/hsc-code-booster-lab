@@ -9,8 +9,8 @@ import { Language, CheatCode } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const Index = () => {
-  const [language, setLanguage] = useLocalStorage<Language>('theta-code-language', 'html');
-  const [code, setCode] = useLocalStorage('theta-code-code', '');
+  const [language, setLanguage] = useLocalStorage<Language>('hsc-code-lab-language', 'html');
+  const [code, setCode] = useLocalStorage('hsc-code-lab-code', '');
   const [currentCheatCode, setCurrentCheatCode] = useState<CheatCode | null>(null);
 
   // Service Worker Registration for PWA
@@ -43,10 +43,10 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-violet-900">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <Header onClear={handleClear} />
       
-      <div className="max-w-6xl mx-auto pb-8">
+      <div className="max-w-4xl mx-auto">
         <LanguageToggle language={language} onLanguageChange={handleLanguageChange} />
         
         <CheatCodeSelector 

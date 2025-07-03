@@ -1,5 +1,5 @@
 
-import { Menu } from 'lucide-react';
+import { Menu, Code } from 'lucide-react';
 import { useState } from 'react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
@@ -23,60 +23,83 @@ const Header = ({ onClear }: HeaderProps) => {
           </SheetTrigger>
           <SheetContent side="left" className="w-80 bg-gradient-to-b from-purple-50 to-white">
             <SheetHeader>
-              <div className="flex items-center gap-3">
+              <div className="flex flex-col items-center gap-4 py-6">
                 <img 
-                  src="https://i.postimg.cc/jdXvXFLG/HSC-20250703-175009-0000.png" 
+                  src="https://i.postimg.cc/NMq1Y6K6/Picsart-25-07-03-17-55-04-190.png" 
                   alt="Theta Code Logo" 
-                  className="w-8 h-8 object-contain"
+                  className="w-20 h-20 object-contain"
                 />
-                <SheetTitle className="text-purple-800 text-xl font-bold">Theta Code</SheetTitle>
+                <SheetTitle className="text-purple-800 text-2xl font-bold">Theta Code</SheetTitle>
+                
+                {/* Developer Portfolio Link */}
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="flex items-center gap-2 border-purple-300 text-purple-700 hover:bg-purple-100"
+                  onClick={() => window.open('https://ridoan-zisan.netlify.app', '_blank')}
+                >
+                  <Code className="h-4 w-4" />
+                  ডেভেলপার পোর্টফোলিও
+                </Button>
               </div>
             </SheetHeader>
-            <div className="mt-6 space-y-4">
-              <div className="rounded-lg bg-gradient-to-r from-purple-100 to-teal-100 p-4">
-                <p className="text-sm text-gray-700 leading-relaxed">
-                  HSC শিক্ষার্থীদের জন্য একটি সম্পূর্ণ কোডিং ল্যাব। HTML এবং C প্রোগ্রামিং শেখার জন্য বিশেষভাবে তৈরি।
-                </p>
-              </div>
-              
-              <div className="rounded-lg bg-white p-4 border border-purple-200">
-                <h4 className="font-semibold text-purple-700 mb-3">বৈশিষ্ট্যসমূহ:</h4>
-                <ul className="text-sm text-gray-600 space-y-2">
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                    রিয়েল-টাইম কোড প্রিভিউ
+            
+            <div className="px-4 space-y-6">
+              {/* HTML Section */}
+              <div className="rounded-lg bg-gradient-to-r from-orange-100 to-red-100 p-4">
+                <h4 className="font-semibold text-orange-800 mb-3 flex items-center gap-2">
+                  🌐 HTML শেখার সুবিধা
+                </h4>
+                <ul className="text-sm text-gray-700 space-y-2">
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-orange-500 rounded-full mr-3 mt-1.5"></span>
+                    রিয়েল-টাইম প্রিভিউ দেখুন
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                    বাংলা অ্যালগরিদম ব্যাখ্যা
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-orange-500 rounded-full mr-3 mt-1.5"></span>
+                    বেসিক থেকে এডভান্স HTML ট্যাগ
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                    ফ্লোচার্ট ভিজুয়্যালাইজেশন
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-orange-500 rounded-full mr-3 mt-1.5"></span>
+                    CSS স্টাইলিং সহ ওয়েব পেজ তৈরি
                   </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                    অফলাইন সাপোর্ট (PWA)
-                  </li>
-                  <li className="flex items-center">
-                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                    NCTB সিলেবাস ভিত্তিক
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-orange-500 rounded-full mr-3 mt-1.5"></span>
+                    ইন্টারঅ্যাক্টিভ ফর্ম ও এলিমেন্ট
                   </li>
                 </ul>
               </div>
-              
-              <div className="rounded-lg bg-gradient-to-r from-teal-100 to-blue-100 p-4 text-center">
-                <p className="text-sm text-gray-700 mb-3">
-                  শিক্ষার্থীদের কোডিং দক্ষতা বৃদ্ধির জন্য তৈরি 💻
+
+              {/* C Programming Section */}
+              <div className="rounded-lg bg-gradient-to-r from-blue-100 to-cyan-100 p-4">
+                <h4 className="font-semibold text-blue-800 mb-3 flex items-center gap-2">
+                  💻 C প্রোগ্রামিং সুবিধা
+                </h4>
+                <ul className="text-sm text-gray-700 space-y-2">
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-1.5"></span>
+                    সিমুলেটেড আউটপুট দেখুন
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-1.5"></span>
+                    অ্যালগরিদম ব্যাখ্যা পড়ুন
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-1.5"></span>
+                    ফ্লোচার্ট ভিজুয়্যালাইজেশন
+                  </li>
+                  <li className="flex items-start">
+                    <span className="w-2 h-2 bg-blue-500 rounded-full mr-3 mt-1.5"></span>
+                    HSC সিলেবাস অনুযায়ী কোড
+                  </li>
+                </ul>
+              </div>
+
+              {/* App Info */}
+              <div className="rounded-lg bg-gradient-to-r from-purple-100 to-violet-100 p-4 text-center">
+                <p className="text-sm text-purple-700 font-medium">
+                  📱 মোবাইল ফ্রেন্ডলি • 🔄 অফলাইন সাপোর্ট • 🎯 HSC ফোকাসড
                 </p>
-                <a 
-                  href="https://ridoan-zisan.netlify.app" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="inline-block bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-purple-700 transition-colors"
-                >
-                  ডেভেলপার পোর্টফোলিও
-                </a>
               </div>
             </div>
           </SheetContent>
@@ -85,7 +108,7 @@ const Header = ({ onClear }: HeaderProps) => {
         {/* App Name with Logo */}
         <div className="flex items-center gap-2">
           <img 
-            src="https://i.postimg.cc/jdXvXFLG/HSC-20250703-175009-0000.png" 
+            src="https://i.postimg.cc/NMq1Y6K6/Picsart-25-07-03-17-55-04-190.png" 
             alt="Theta Code Logo" 
             className="w-6 h-6 object-contain"
           />
